@@ -1,1 +1,525 @@
+<main id="trainingPlanContainer" class="p-6">
+        </main>
+</div>
 
+<script>
+    const trainingPlanData = {
+        weeks: [
+            {
+                week: 5,
+                days: [
+                    {
+                        day: 'Day 1',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: 'Light jog (5 min), followed by dynamic stretches: leg swings, arm circles, walking lunges (10 reps each side).'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: '4-Mile Tempo Run: Run 4 miles at a consistent, challenging pace. Finish with 4x 200m strides.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Light jog (5 min), followed by static stretching, holding each stretch for 30 seconds.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 2',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '5 min on a cardio machine (e.g., bike, rower), followed by bodyweight squats, push-ups, and pull-ups (3 sets of 10-12 reps).'
+                            },
+                            {
+                                title: 'Strength',
+                                details: 'A) Barbell Back Squat: 5x5, increasing weight each set. Rest 90s.\nB) Dumbbell Romanian Deadlift: 3x10-12 reps. Rest 60s.\nC) Leg Press: 3x12-15 reps. Rest 60s.'
+                            },
+                            {
+                                title: 'Conditioning',
+                                details: '3 rounds for time: 400m run, 20 Kettlebell Swings, 15 Box Jumps.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 3',
+                        restDay: true,
+                        workout: [
+                            {
+                                title: 'Rest & Active Recovery',
+                                details: 'Complete rest or a light walk/yoga session.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 4',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '8 min of skipping rope, followed by joint mobility drills.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: 'Interval Running: 6x 800m at a challenging pace with a 400m jog recovery between each interval.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Light jog (5 min), followed by static stretching.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 5',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '5 min of cardio, followed by banded pull-aparts and light resistance band work.'
+                            },
+                            {
+                                title: 'Strength',
+                                details: 'A) Dumbbell Bench Press: 4x8 reps, increasing weight. Rest 90s.\nB) Pull-ups: 4x as many reps as possible. Rest 60s.\nC) Push Press: 3x10 reps. Rest 60s.'
+                            },
+                            {
+                                title: 'Core & Mobility',
+                                details: 'Plank: 3x 60s holds. Glute bridges: 3x15 reps.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 6',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '10 min light jog, followed by dynamic stretching.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: 'Long Endurance Run: 7-Mile run at a comfortable, conversational pace.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Static stretching and foam rolling for 10 min.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 7',
+                        restDay: true,
+                        workout: [
+                            {
+                                title: 'Rest',
+                                details: 'Active rest or complete rest day.'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                week: 6,
+                days: [
+                    {
+                        day: 'Day 1',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: 'Dynamic stretches, including high knees, butt kicks, and walking lunges.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: '3x 1-Mile Repeats: Run 1 mile at a fast pace, followed by a 4-minute recovery jog. Repeat 3 times.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Light jog for 5-10 min, followed by static stretching.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 2',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '10 min of rowing or cycling, followed by shoulder mobility drills.'
+                            },
+                            {
+                                title: 'Strength',
+                                details: 'A) Overhead Press: 5x5, increasing weight each set. Rest 90s.\nB) Bent-Over Rows: 4x8 reps. Rest 60s.\nC) Seated Dumbbell Curls: 3x12 reps. Rest 45s.'
+                            },
+                            {
+                                title: 'Core',
+                                details: 'Hollow body holds: 3x 30s. Leg raises: 3x15 reps.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 3',
+                        restDay: true,
+                        workout: [
+                            {
+                                title: 'Rest',
+                                details: 'Active recovery (e.g., light hiking or swimming) or a full rest day.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 4',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '5 min of cardio, then a dynamic warm-up targeting legs and hips.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: '5-Mile Tempo Run: Increase speed and sustain a faster pace for the entire duration.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Light jog and a full body static stretch.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 5',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: 'Jump rope for 5 min, then bodyweight squats and lunges.'
+                            },
+                            {
+                                title: 'Strength',
+                                details: 'A) Deadlift: 5x3, focus on form and heavy weight. Rest 2 min.\nB) Goblet Squats: 3x10-12 reps. Rest 60s.\nC) Glute Bridges: 3x15 reps. Rest 45s.'
+                            },
+                            {
+                                title: 'Conditioning',
+                                details: 'EMOM (Every Minute on the Minute) for 10 min: 5 Burpees and 10 Kettlebell Swings.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 6',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '10 min light jog, followed by dynamic stretching.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: 'Long Endurance Run: 8-Mile run at a consistent, comfortable pace.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Static stretching and foam rolling.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 7',
+                        restDay: true,
+                        workout: [
+                            {
+                                title: 'Rest',
+                                details: 'Full rest day.'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                week: 7,
+                days: [
+                    {
+                        day: 'Day 1',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: 'Dynamic warm-up, including butt kicks, high knees, and lunges with a twist.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: 'Intervals: 8x 400m at a fast pace with a 200m jog recovery between each.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Light jog, followed by static stretching.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 2',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '10 min on the elliptical, followed by shoulder dislocations and light band work.'
+                            },
+                            {
+                                title: 'Strength',
+                                details: 'A) Incline Dumbbell Press: 4x8-10 reps. Rest 90s.\nB) Cable Rows: 4x10-12 reps. Rest 60s.\nC) Lateral Raises: 3x15 reps. Rest 45s.'
+                            },
+                            {
+                                title: 'Accessory',
+                                details: 'Dumbbell Flys: 3x12 reps. Pull-downs: 3x10 reps.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 3',
+                        restDay: true,
+                        workout: [
+                            {
+                                title: 'Rest',
+                                details: 'Light activity like walking or stretching. Prioritize recovery.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 4',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: 'Dynamic stretches for 5-10 min.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: '6-Mile Progression Run: Start at a comfortable pace and gradually increase speed every 2 miles.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Light jog and static stretching.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 5',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '5 min of jump rope, followed by box jumps and burpees.'
+                            },
+                            {
+                                title: 'Strength',
+                                details: 'A) Weighted Lunges: 3x10 reps each leg. Rest 60s.\nB) Box Squats: 4x8 reps. Rest 90s.\nC) Single-Leg RDLs: 3x10 reps each leg. Rest 60s.'
+                            },
+                            {
+                                title: 'Conditioning',
+                                details: 'For time: 1000m row, 50 Wall Balls, 30 Toes-to-Bar.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 6',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '10 min easy jog.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: 'Long Endurance Run: 9-Mile run at a steady, manageable pace.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Static stretching and foam rolling for 10-15 min.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 7',
+                        restDay: true,
+                        workout: [
+                            {
+                                title: 'Rest',
+                                details: 'Complete rest day. Focus on recovery and nutrition.'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                week: 8,
+                days: [
+                    {
+                        day: 'Day 1',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: 'Dynamic stretches focusing on leg and hip mobility.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: '3x 1-Mile Tempo Repeats: Run at a challenging pace, with a 3-minute recovery jog. Finish with 6x 100m fast strides.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Light jog and static stretching.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 2',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '5 min on the assault bike, followed by light resistance band exercises for shoulders and hips.'
+                            },
+                            {
+                                title: 'Strength',
+                                details: 'A) Back Squat: 3x5 at 80% of 1-rep max. Rest 2 min.\nB) Strict Pull-ups: 3 sets to failure. Rest 90s.\nC) Push Press: 3x8 reps, increasing weight. Rest 60s.'
+                            },
+                            {
+                                title: 'Conditioning',
+                                details: 'AMRAP (As Many Rounds As Possible) in 12 min: 10 Deadlifts, 15 Push-ups, 20 AbMat Sit-ups.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 3',
+                        restDay: true,
+                        workout: [
+                            {
+                                title: 'Rest',
+                                details: 'Light active recovery (walking, foam rolling) to prepare for the final workouts of the week.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 4',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '10 min of dynamic stretching.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: '7-Mile Tempo Run: A sustained effort run at a challenging pace. This is a final test of endurance and pace.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Static stretching and a light walk to cool down.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 5',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '5 min of cardio and full-body dynamic stretches.'
+                            },
+                            {
+                                title: 'Strength',
+                                details: 'A) Barbell Hip Thrusts: 4x8 reps. Rest 90s.\nB) Push Press: 4x8 reps. Rest 60s.\nC) Goblet Squats: 3x12 reps. Rest 45s.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Full-body stretch, focusing on all major muscle groups.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 6',
+                        restDay: false,
+                        workout: [
+                            {
+                                title: 'Warm-up',
+                                details: '10 min easy jog.'
+                            },
+                            {
+                                title: 'Main Set',
+                                details: 'Long Endurance Run: 10-Mile run at a comfortable pace. A final long run to cap off the program.'
+                            },
+                            {
+                                title: 'Cool Down',
+                                details: 'Extended static stretching and foam rolling.'
+                            }
+                        ]
+                    },
+                    {
+                        day: 'Day 7',
+                        restDay: true,
+                        workout: [
+                            {
+                                title: 'Rest',
+                                details: 'Full rest day. The end of the 4-week cycle.'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    };
+
+    function generatePlan() {
+        const container = document.getElementById('trainingPlanContainer');
+        let dayCounter = 1;
+
+        trainingPlanData.weeks.forEach(week => {
+            const weekSection = document.createElement('div');
+            weekSection.innerHTML = `<h2 class="text-3xl font-bold font-montserrat mt-8 mb-4">Week ${week.week}</h2>`;
+            container.appendChild(weekSection);
+
+            week.days.forEach(day => {
+                const daySection = document.createElement('div');
+                daySection.className = 'day-container mb-4';
+                
+                const dayHeader = document.createElement('div');
+                dayHeader.className = 'day-header p-4 flex items-center collapsible rounded-md transition-colors duration-200 hover:bg-gray-300';
+                dayHeader.innerHTML = `
+                    <div class="badge rounded-full flex items-center justify-center font-bold mr-4 text-sm">
+                        ${day.restDay ? 'R' : day.day.split(' ')[1]}
+                    </div>
+                    <span class="font-semibold text-lg">${day.day}${day.restDay ? ' (Rest Day)' : ''}</span>
+                    <svg class="ml-auto w-5 h-5 transition-transform duration-200 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                `;
+                daySection.appendChild(dayHeader);
+
+                const content = document.createElement('div');
+                content.className = 'content p-4 transition-all duration-300 ease-in-out';
+                
+                day.workout.forEach(block => {
+                    const workoutBlock = document.createElement('div');
+                    workoutBlock.className = 'workout-block pl-6 mb-4';
+                    workoutBlock.innerHTML = `
+                        <h3 class="block-title font-bold text-xl">${block.title}</h3>
+                        <p class="mt-2 text-gray-700 whitespace-pre-line">${block.details}</p>
+                    `;
+                    content.appendChild(workoutBlock);
+                });
+                
+                daySection.appendChild(content);
+                container.appendChild(daySection);
+                
+                if (!day.restDay) {
+                    dayCounter++;
+                }
+            });
+        });
+
+        document.querySelectorAll('.collapsible').forEach(header => {
+            header.addEventListener('click', () => {
+                header.parentElement.classList.toggle('active');
+            });
+        });
+    }
+    
+    document.addEventListener('DOMContentLoaded', generatePlan);
+</script>
